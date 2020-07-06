@@ -154,5 +154,65 @@ domIsWesom.innerHTML = "DOM<br> Is<br> Awesome"; // to match the provided style.
 
 address.innerHTML = "123 Way 456 Street <br> Somewhere, USA"; // to match the provided style.
 
-
 // Stretch Goals
+
+let allH4 = document.querySelectorAll("h4");
+
+// odd H4
+for (let i = 0; i < allH4.length; i += 2) {
+  allH4[i].style.color = "tomato";
+}
+
+//even H4
+
+for (let i = 1; i < allH4.length; i += 2) {
+  allH4[i].style.color = "#099AEC";
+}
+
+//events
+
+// Hello button
+let mainContent = document.querySelector(".main-content");
+console.log(mainContent);
+
+const allH4Hello = () => {
+  for (let i = 0; i < allH4.length; i++) {
+    allH4[i].innerText = "HELLO";
+    allH4[i].style.color = "#09EC43 ";
+    allH4[i].style.fontSize = "4rem";
+  }
+};
+
+let helloButton = document.createElement("button");
+helloButton.innerText = "HELLO";
+helloButton.style.fontSize ="1.3rem"
+helloButton.style.margin = "2rem";
+helloButton.style.padding = "1rem 2rem";
+helloButton.style.backgroundColor = "#099AEC";
+helloButton.style.color = "white";
+
+helloButton.addEventListener("click", allH4Hello);
+
+mainContent.appendChild(helloButton);
+
+// Goodbye button
+
+const allH4Bye = () => {
+  for (let i = 0; i < allH4.length; i++) {
+    allH4[i].innerText = "BYE";
+    allH4[i].style.color = "#E909EC";
+    allH4[i].style.fontSize = "4rem";
+  }
+};
+
+let goodbyeButton = document.createElement("button");
+goodbyeButton.innerText = "GOODBYE";
+goodbyeButton.style.fontSize ="1.3rem"
+goodbyeButton.style.margin = "2rem";
+goodbyeButton.style.padding = "1rem 1.7rem";
+goodbyeButton.style.backgroundColor = "tomato";
+goodbyeButton.style.color = "white";
+
+goodbyeButton.addEventListener("click", allH4Bye);
+
+mainContent.appendChild(goodbyeButton);
